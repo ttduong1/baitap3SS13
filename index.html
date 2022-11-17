@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="/demo.js"></script> -->
+</head>
+<body>
+    <h2>Type anthing slowly</h2>
+
+
+    <textarea
+    id="typingText"
+    rows="10"
+    cols="40"
+    onkeypress="typingText()"
+    ></textarea>
+
+    <script>
+        var textArea = document.getElementById("typingText");
+
+        const textDefault = "May mắn không đến lần thứ hai bất hạnh không đến một mình.";
+
+        const textDefaultBreak = textDefault.split(" ");
+        
+        var count = 0;
+        var text = "";
+
+        function typingText() {
+
+            if (count < 13) {
+                text += textDefaultBreak[count] + " ";
+
+                count++;
+
+            }else{
+                text = "";
+                count = 0;
+            }
+            textArea.value = text;
+        }
+    </script>
+</body>
+</html>
